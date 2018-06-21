@@ -1,7 +1,7 @@
 var fs = require('fs');
 var temp = require('temp');
 var webshot = require('webshot');
-
+var path = require('path');
 /**
  * Generates a PNG image for a URL
  *
@@ -16,7 +16,7 @@ var webshot = require('webshot');
  * @param  {Object}     callback.err        An error object (if any)
  * @param  {String}     callback.path       The path on disk where the image is stored
  */
-var generate = module.exports.generate = function(url, options, callback) {
+var generate = module.exports.generate = function(url, options,parsedUrl, callback) {
     options = options || {};
     options.width = options.width || 1024;
     options.height = options.height || 768;
@@ -27,7 +27,7 @@ var generate = module.exports.generate = function(url, options, callback) {
         options.delay = 10000;
     }
 //benito -- added track traceurl nav redirection for iframe 
-if(url == "http://google.com"){
+if(parsedUrl.hostname != "connect.track-trace.com"){
     screengrab(url, options, callback);
 
 }
@@ -47,7 +47,15 @@ else{
  * @api private
  */
 var screengrab = function(url, options, callback) {
-    var tempPath = temp.path({suffix: '.png'});
+    //var tempPath = temp.path({suffix: '.png'});
+    //console.log(tempPath);
+
+
+    
+    var rotsavefile =path.resolve(path.join(__dirname,'static'));
+    var tempPath = rotsavefile + '/'+randomString(12).toString() + '.png';
+    console.log(tempPath);
+
 
     var webshotOptions = {
         'renderDelay': options.delay,
@@ -78,3 +86,11 @@ var screengrab = function(url, options, callback) {
         return callback(null, tempPath);
     });
 };
+
+function randomString(length, chars) {
+
+    var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var result = '';
+        for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+        return result;
+}

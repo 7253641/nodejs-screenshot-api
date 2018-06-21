@@ -29,7 +29,7 @@ exports.generate = function(req, res) {
         'full': (req.param('full') === 'true')
     };
 
-    WebshotAPI.generate(url, options, function(errj, path) {
+    WebshotAPI.generate(url, options,parsedUrl, function(errj, path) {
         if (errj) {
             res.send(errj.code, errj.msg);
         } else {
