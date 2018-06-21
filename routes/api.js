@@ -29,9 +29,9 @@ exports.generate = function(req, res) {
         'full': (req.param('full') === 'true')
     };
 
-    WebshotAPI.generate(url, options, function(err, path) {
-        if (err) {
-            res.send(err.code, err.msg);
+    WebshotAPI.generate(url, options, function(errj, path) {
+        if (errj) {
+            res.send(errj.code, errj.msg);
         } else {
             // Construct a prettier name for our image
             // For example, `http://okfn.org/about/how-we-can-help-you/` will result in `okfn_org_about_how_we_can_help_you.png`
@@ -46,10 +46,10 @@ exports.generate = function(req, res) {
             //    fs.unlink(path);
              //});
 
-             fs.readFile(path, "base64", function(err, data) {
+             fs.readFile(path, "base64", function(errx, data) {
                 fs.unlink(path);
-                 if (err) {
-                    res.send(404,err);
+                 if (errx) {
+                    res.send(404,errx);
                  }else{
                     res.send(200,data);
 
