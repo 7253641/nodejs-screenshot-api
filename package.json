@@ -17,11 +17,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node app.js"
     },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:okfn/webshot"
-    },
-    "author": "Oliver Searle-Barnes",
+    "author": "Benito Alvares",
     "license": "BSD",
     "bugs": {
         "url": "https://github.com/okfn/webshot/issues"
