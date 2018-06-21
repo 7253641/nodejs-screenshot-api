@@ -53,9 +53,13 @@ var screengrab = function(url, options, callback) {
 
     
     var rotsavefile =path.resolve(path.join(__dirname,'static'));
-    var tempPath = rotsavefile + '\\'+randomString(12).toString() + '.png';
+    var randomfilename=randomString(12).toString()+ '.png' ;
+    var tempPath = path.join(rotsavefile,randomfilename) ;
     console.log(tempPath);
 
+    var singpa= path.join("./static",randomfilename);
+    fs.appendFileSync(singpa,'');
+    console.log(singpa);
 
     var webshotOptions = {
         'renderDelay': options.delay,

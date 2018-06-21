@@ -45,7 +45,9 @@ exports.generate = function(req, res) {
             //res.download(path, imageName, function() {
             //    fs.unlink(path);
              //});
+console.log("success");
 
+console.log(path);
              fs.readFile(path, "base64", function(errx, data) {
                 fs.unlink(path);
                  if (errx) {
