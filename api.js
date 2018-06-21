@@ -26,8 +26,8 @@ var generate = module.exports.generate = function(url, options, callback) {
     if (options.delay > 10000) {
         options.delay = 10000;
     }
-
-    screengrab(url, options, callback);
+//benito -- added track traceurl nav redirection for iframe 
+    screengrab(url + '/open,self+action,direct', options, callback);
 };
 
 /**
@@ -51,17 +51,21 @@ var screengrab = function(url, options, callback) {
         },
         'shotSize': {
             'width': 'window',
-            'height': (options.full === true) ? 'all' : 'window'
+            //'height': (options.full === true) ? 'all' : 'window' --benito
+            'height': 'all'
         },
-        'userAgent': options.userAgent,
+        //'userAgent': options.userAgent, --benito
+        'userAgent': 'Mozilla/5.0 (Windows NT 6.2; Win64; x64)',
         'phantomConfig': {
             'ignore-ssl-errors': true,
-            'ssl-protocol': 'any'
+            'ssl-protocol': 'any',
+            'debug':'false'
         }
     };
 
     webshot(url, tempPath, webshotOptions, function(err) {
         if (err) {
+            console.log(err);
             return callback({'code': 500, 'msg': 'Unable to take a screenshot'});
         }
 

@@ -13,6 +13,7 @@ exports.generate = function(req, res) {
     }
 
     var parsedUrl = Url.parse(url);
+    console.log(parsedUrl);
     if (!parsedUrl.protocol) {
         return res.send(400, 'Invalid url, missing protocol');
     }
@@ -40,9 +41,22 @@ exports.generate = function(req, res) {
                 imageName += pathName;
             }
             imageName += '.png';
-            res.download(path, imageName, function() {
+
+            //res.download(path, imageName, function() {
+            //    fs.unlink(path);
+             //});
+
+             fs.readFile(path, "base64", function(err, data) {
                 fs.unlink(path);
-            });
+                 if (err) {
+                    res.send(404,err);
+                 }else{
+                    res.send(200,data);
+
+                 }
+
+
+             });
         }
     });
 };
