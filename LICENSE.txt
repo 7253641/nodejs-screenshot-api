@@ -24,3 +24,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies, 
 either expressed or implied, of the FreeBSD Project.
+
+localhost:5050/api/generate?url=http://connect.track-trace.com/for/pritee0318/billoflading/APLU750575208&delay=10000
+localhost:5050/api/generate?url=http://connect.track-trace.com/for/pritee0318/billoflading/OOLU2598739530/open,self+action,direct&delay=10000
+
+localhost:5050/api/generate?url=http://connect.track-trace.com/for/pritee0318/billoflading/OOLU2598739530&delay=10000
+localhost:5050/api/generate?url=http://connect.track-trace.com/for/pritee0318/billoflading/APLU750575208&delay=10000
+az group create --name myNodeJsScrShotGroup --location
