@@ -20,7 +20,6 @@
     "author": "Benito Alvares",
     "license": "BSD",
     "engines": {
-        "node": "0.10.x",
-        "npm": "1.2.x"
+        "node": "0.10.x"
     }
 }
