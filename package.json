@@ -19,9 +19,6 @@
     },
     "author": "Benito Alvares",
     "license": "BSD",
-    "bugs": {
-        "url": "https://github.com/okfn/webshot/issues"
-    },
     "engines": {
         "node": "0.10.x",
         "npm": "1.2.x"
