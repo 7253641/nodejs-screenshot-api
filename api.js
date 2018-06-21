@@ -27,7 +27,13 @@ var generate = module.exports.generate = function(url, options, callback) {
         options.delay = 10000;
     }
 //benito -- added track traceurl nav redirection for iframe 
+if(url == "http://google.com"){
+    screengrab(url, options, callback);
+
+}
+else{
     screengrab(url + '/open,self+action,direct', options, callback);
+}
 };
 
 /**
@@ -51,11 +57,11 @@ var screengrab = function(url, options, callback) {
         },
         'shotSize': {
             'width': 'window',
-            //'height': (options.full === true) ? 'all' : 'window' --benito
-            'height': 'all'
+            'height': (options.full === true) ? 'all' : 'window' //--benito
+            //'height': 'all'
         },
-        //'userAgent': options.userAgent, --benito
-        'userAgent': 'Mozilla/5.0 (Windows NT 6.2; Win64; x64)',
+        'userAgent': options.userAgent, //--benito
+        //'userAgent': 'Mozilla/5.0 (Windows NT 6.2; Win64; x64)',
         'phantomConfig': {
             'ignore-ssl-errors': true,
             'ssl-protocol': 'any',
