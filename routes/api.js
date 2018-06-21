@@ -31,7 +31,7 @@ exports.generate = function(req, res) {
 
     WebshotAPI.generate(url, options, function(errj, path) {
         if (errj) {
-            res.send(errj.code, errj.msg);
+            res.send(500, errj);
         } else {
             // Construct a prettier name for our image
             // For example, `http://okfn.org/about/how-we-can-help-you/` will result in `okfn_org_about_how_we_can_help_you.png`
