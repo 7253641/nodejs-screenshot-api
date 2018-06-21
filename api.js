@@ -53,7 +53,7 @@ var screengrab = function(url, options, callback) {
 
     
     var rotsavefile =path.resolve(path.join(__dirname,'static'));
-    var tempPath = rotsavefile + '/'+randomString(12).toString() + '.png';
+    var tempPath = rotsavefile + '\\'+randomString(12).toString() + '.png';
     console.log(tempPath);
 
 
