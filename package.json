@@ -2,7 +2,7 @@
     "name": "webshots",
     "version": "0.0.1",
     "description": "Takes webshots",
-    "main": "server.js",
+    "main": "app.js",
     "dependencies": {
         "flatiron": "~0.3.8",
         "nodemon": "~0.7.10",
@@ -18,8 +18,5 @@
         "start": "node app.js"
     },
     "author": "Benito Alvares",
-    "license": "BSD",
-    "engines": {
-        "node": "0.10.x"
-    }
+    "license": "BSD"
 }
