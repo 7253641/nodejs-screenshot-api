@@ -22,11 +22,18 @@ var generate = module.exports.generate = function(url, options,parsedUrl, callba
     options.height = options.height || 768;
     options.delay = options.delay || 0;
     options.userAgent = options.userAgent || '';
+<<<<<<< HEAD
 
     if (options.delay > 10000) {
         options.delay = 10000;
     }
 //benito -- added track traceurl nav redirection for iframe 
+=======
+    if (options.delay > 10000) {
+        options.delay = 10000;
+    }
+//benito -- added track traceurl nav redirection for iframe
+>>>>>>> init
 if(parsedUrl.hostname != "connect.track-trace.com"){
     screengrab(url, options, callback);
 
@@ -47,11 +54,17 @@ else{
  * @api private
  */
 var screengrab = function(url, options, callback) {
+<<<<<<< HEAD
     //var tempPath = temp.path({suffix: '.png'});
     //console.log(tempPath);
 
 
     
+=======
+    // var tempPath = temp.path({suffix: '.png'});
+    // console.log(tempPath);
+
+>>>>>>> init
     var rotsavefile =path.resolve(path.join(__dirname,'static'));
     var randomfilename=randomString(12).toString()+ '.png' ;
     var tempPath = path.join(rotsavefile,randomfilename) ;
@@ -70,7 +83,10 @@ var screengrab = function(url, options, callback) {
         'shotSize': {
             'width': 'window',
             'height': (options.full === true) ? 'all' : 'window' //--benito
+<<<<<<< HEAD
             //'height': 'all'
+=======
+>>>>>>> init
         },
         //'userAgent': options.userAgent, //--benito
         'userAgent': 'Mozilla/5.0 (Windows NT 6.2; Win64; x64)',
@@ -97,4 +113,8 @@ function randomString(length, chars) {
         var result = '';
         for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
         return result;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> init

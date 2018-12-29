@@ -42,6 +42,7 @@ exports.generate = function(req, res) {
             }
             imageName += '.png';
 
+<<<<<<< HEAD
             //res.download(path, imageName, function() {
             //    fs.unlink(path);
              //});
@@ -59,6 +60,27 @@ console.log(path);
 
 
              });
+=======
+            //浏览器自动下载png后删除文件
+            // res.download(path, imageName, function() {
+            // fs.unlink(path,function (err) {});
+            //  });
+            console.log("success");
+            console.log(path);
+            fs.readFile(path, "binary", function(errx, data) {
+              fs.unlink(path,function (err) {
+                // if(err) throw err;
+                // console.log('成功')
+              });
+              if (errx) {
+                res.send(404,errx);
+              }else{
+                // res.send(200,data);
+                res.write(data, "binary");
+                res.end();
+              }
+          });
+>>>>>>> init
         }
     });
 };
