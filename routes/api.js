@@ -42,25 +42,6 @@ exports.generate = function(req, res) {
             }
             imageName += '.png';
 
-<<<<<<< HEAD
-            //res.download(path, imageName, function() {
-            //    fs.unlink(path);
-             //});
-console.log("success");
-
-console.log(path);
-             fs.readFile(path, "base64", function(errx, data) {
-                fs.unlink(path);
-                 if (errx) {
-                    res.send(404,errx);
-                 }else{
-                    res.send(200,data);
-
-                 }
-
-
-             });
-=======
             //浏览器自动下载png后删除文件
             // res.download(path, imageName, function() {
             // fs.unlink(path,function (err) {});
@@ -80,7 +61,6 @@ console.log(path);
                 res.end();
               }
           });
->>>>>>> init
         }
     });
 };
