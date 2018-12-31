@@ -37,7 +37,7 @@ exports.generate = function(req, res) {
             // For example, `http://okfn.org/about/how-we-can-help-you/` will result in `okfn_org_about_how_we_can_help_you.png`
             var imageName = parsedUrl.hostname.replace(/\W/g, '_');
             // var pathName = parsedUrl.pathname.replace(/\W/g, '_').replace(/_$/, '');
-            var pathName = '/tmp/'
+            var pathName = '/tmp/';
             if (pathName) {
                 imageName += pathName;
             }

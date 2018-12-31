@@ -8,7 +8,7 @@ Originally forked from [opsb/node-webshot-server](https://github.com/opsb/node-w
 
     $ npm install
     $ node app.js
-    open your browser at http://localhost:5000
+    open your browser at http://localhost:5050
 
 ## Heroku
 
